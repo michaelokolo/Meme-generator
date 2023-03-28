@@ -1,13 +1,22 @@
+import data from './memesData'
+
+
 function Meme(){
+    function handleClick(){
+        const newData = data
+        const randomNum = Math.floor(Math.random() * newData.data.memes.length)
+        console.log(newData.data.memes[randomNum]["url"])
+    }
+
     return(
         <div className="meme">
-            <form>
+            <div className= "form">
                 <div className="text-box">
                     <input type="text" className="box" placeholder="Top text"/>
                     <input type="text" className="box" placeholder="Bottom text"/>
                 </div>
-                <button>Get a new meme image  🖼</button>
-            </form>
+                <button onClick={handleClick}>Get a new meme image  🖼</button>
+            </div>
         </div>
     )
 }
