@@ -60,7 +60,7 @@ color: #FFFFFF;
   
 }
 
-form{
+.form{
   width: 477px;
   display:flex;
   justify-content: center;
@@ -97,3 +97,28 @@ button{
   color: #FFFFFF;
   cursor:pointer;
 }
+
+
+/* .small-img{
+  width: 40rem;
+  border-radius: 5px;
+  -webkit-filter: brightness(100%);
+  -moz-filter: brightness(100%);
+  -o-filter: brightness(100%);
+  -ms-filter: brightness(100%);
+  filter: brightness(100%);
+}
+
+
+
+
+.small-img:hover{
+  -webkit-filter: brightness(70%);
+  -moz-filter: brightness(70%);
+  -o-filter: brightness(70%);
+  -ms-filter: brightness(70%);
+  filter: brightness(70%);
+  transition: all 1s ease-in-out;
+} */
+
+
