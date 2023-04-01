@@ -53,10 +53,11 @@ color: #FFFFFF;
 }
 
 .meme{
-  margin-top: 100px;
+  margin-top: 150px;
   display: flex;
-  justify-content: center;
+  align-items: center;
   width:100vw;
+  flex-direction: column;
   
 }
 
@@ -86,7 +87,7 @@ color: #FFFFFF;
   color: #0D0D0D;
 }
 
-/* button{
+button{
   height: 40px;
   background: linear-gradient(90.41deg, #711F8D 1.14%, #A818DA 100%);
   border:none;
@@ -96,7 +97,7 @@ color: #FFFFFF;
   line-height: 19px;
   color: #FFFFFF;
   cursor:pointer;
-} */
+}
 
 
 /* .small-img{
@@ -121,78 +122,42 @@ color: #FFFFFF;
   transition: all 1s ease-in-out;
 } */
 
-/*Style for practize */
+.meme--image{
+  width: 30rem;
+  height: 20rem;
+  margin-top:36px;
+  border-radius: 2px;
+}
+
+
+/*style for practize*/
 body{
   background-color: #000;
-  display:flex;
+  color:white;
+  display: flex;
+  align-items: center;
   justify-content: center;
-  color:#fff;
-  font-size: 18px;
-}
-.btn{
-  margin-top:10rem;
-  background:none;
-  border:2px solid #fff;
-  color:#fff;
-  padding:10px 50px;
-  font-size: 18px;
-  border-radius: 30px;
-  cursor:pointer;
 }
 
-.btn:hover{
-  background-color: #fff;
-  color:rgb(73, 184, 73);
+.practise{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  margin-top:5rem;
 }
-
-.counter{
-  display:flex;
-  margin-top: 20rem;
-  justify-content:center;
-  align-items:center;
-  position: relative;
-}
-.counter--count{
-  background-color:#fff;
-  border-radius:50%;
-  width:100px;
-  height:100px;
+.state--value{
+  width:70px;
+  height: 70px;
+  background: #fff;
   color:#000;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-}
-
-.counter--minus{
-  width:3rem;
-  height:3rem;
+  align-items: center;
+  justify-content: center;
+  display: flex;
   border-radius: 50%;
-  border:none;
-  background-color: gray;
-  color: #fff;
-  font-size: 30px;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  position: absolute;
-  left:-20px;
-  bottom:0px;
   cursor: pointer;
 }
-
-.counter--plus{
-  width:3rem;
-  height:3rem;
-  border-radius: 50%;
-  border:none;
-  background-color: gray;
+.state--value:hover{
+  background-color: #6e6c6c;
   color: #fff;
-  font-size: 30px;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  position: absolute;
-  right:-20px;
-  bottom:0px;
-  cursor: pointer;
 }
