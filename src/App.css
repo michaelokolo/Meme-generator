@@ -87,7 +87,7 @@ color: #FFFFFF;
   color: #0D0D0D;
 }
 
-button{
+/* button{
   height: 40px;
   background: linear-gradient(90.41deg, #711F8D 1.14%, #A818DA 100%);
   border:none;
@@ -97,7 +97,7 @@ button{
   line-height: 19px;
   color: #FFFFFF;
   cursor:pointer;
-}
+} */
 
 
 /* .small-img{
@@ -132,7 +132,7 @@ button{
 
 /*style for practize*/
 body{
-  background-color: #000;
+  background-color: rgb(81, 231, 81);
   color:white;
   display: flex;
   align-items: center;
@@ -160,4 +160,19 @@ body{
 .state--value:hover{
   background-color: #6e6c6c;
   color: #fff;
+}
+
+button{
+  background: none;
+  color: #fff;
+  border:2px solid #fff;
+  padding:10px 20px;
+  font-size: 15px;
+  border-radius: 30px;
+  cursor: pointer;
+}
+
+button:hover{
+  background: #fff;
+  color: rgb(81, 231, 81);
 }
