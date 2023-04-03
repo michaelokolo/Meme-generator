@@ -31,7 +31,10 @@ function App() {
   })
   
  let starIcon =  contact.isFavorite ? 'gold' : 'black'
-
+  function toggleFavorite(){
+    setContact(preState =>
+      ({...preState, isFavorite: !preState.isFavorite})
+      )}
 
   return (
     // <div className='practise'>{/*Remember to change class*/}
@@ -50,7 +53,7 @@ function App() {
       <article className='card'>
         <img src={userpix} className='card--image'/>
         <div className='card--info'>
-            <FontAwesomeIcon icon={faStar} style={{color:starIcon}} className='card-favorite'/>
+            <FontAwesomeIcon onClick={toggleFavorite} icon={faStar} style={{color:starIcon}} className='card-favorite'/>
             <h2 className='card--name'>
               {contact.firstName} {contact.lastName}
             </h2>
