@@ -1,10 +1,12 @@
 import React from 'react';
 import './App.css';
-import Navbar from './Navbar'
-import Meme from './Meme'
-// import userpix from './images/user.png'
-// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-// import { faStar} from '@fortawesome/fontawesome-free-solid';
+// import Navbar from './Navbar'
+// import Meme from './Meme'
+import userpix from './images/user.png'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faStar} from '@fortawesome/fontawesome-free-solid';
+import Count from './Count'
+import Star from './Star'
 
 function App() {
   
@@ -30,41 +32,56 @@ function App() {
         isFavorite: true
   })
   
- let starIcon =  contact.isFavorite ? 'gold' : 'black'
+
   function toggleFavorite(){
     setContact(preState =>
       ({...preState, isFavorite: !preState.isFavorite})
       )}
 
+
+      // const [count, setCount] = React.useState(0)
+
+      // function add (){
+      //   setCount((preState) => preState + 1)
+      // }
+
+      // function substract (){
+      //   setCount((preState) => preState - 1)
+      // }
+
   return (
-    <div>
-      <Navbar />
-      <Meme />
-      {/* <h1 className="state--title">Do I feel like going out tonight?</h1>
-      <diV className="state--value" onClick={handleFlip}>
-          <h1>{answer}</h1>
-      </diV>
-      <button onClick={addItem}>Add Item</button>
-      {allThingsArray} */}
+    // <div className='counter'>
+      // {/* <Navbar />
+      // <Meme /> */}
+      // {/* <h1 className="state--title">Do I feel like going out tonight?</h1>
+      // <diV className="state--value" onClick={handleFlip}>
+      //     <h1>{answer}</h1>
+      // </diV>
+      // <button onClick={addItem}>Add Item</button> */}
+      // {/* {allThingsArray}  */}
+      // {/* <button className='counter--minus' onClick={substract}>-</button>
+      // <Count
+      //   number = {count}
+      // />
+      // <button className='counter--plus' onClick={add}>+</button> */}
+    // </div>
 
-    </div>
 
+    <main>
+      <article className='card'>
+        <img src={userpix} className='card--image'/>
+        <div className='card--info'>
+          <Star isFilled = {contact.isFavorite} handleClick={toggleFavorite}/>
+            <h2 className='card--name'>
+              {contact.firstName} {contact.lastName}
+            </h2>
+            <p className='card--contact'>{contact.phone}</p>
+            <p className='card--contact'>{contact.email}</p>
 
-    // <main>
-    //   <article className='card'>
-    //     <img src={userpix} className='card--image'/>
-    //     <div className='card--info'>
-    //         <FontAwesomeIcon onClick={toggleFavorite} icon={faStar} style={{color:starIcon}} className='card-favorite'/>
-    //         <h2 className='card--name'>
-    //           {contact.firstName} {contact.lastName}
-    //         </h2>
-    //         <p className='card--contact'>{contact.phone}</p>
-    //         <p className='card--contact'>{contact.email}</p>
+        </div>
 
-    //     </div>
-
-    //   </article>
-    // </main>
+      </article>
+    </main>
   );
 }
 
