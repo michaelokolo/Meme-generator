@@ -1,10 +1,10 @@
 import React from 'react';
 import './App.css';
-//import Navbar from './Navbar'
-//import Meme from './Meme'
-import userpix from './images/user.png'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faStar} from '@fortawesome/fontawesome-free-solid';
+import Navbar from './Navbar'
+import Meme from './Meme'
+// import userpix from './images/user.png'
+// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+// import { faStar} from '@fortawesome/fontawesome-free-solid';
 
 function App() {
   
@@ -37,33 +37,34 @@ function App() {
       )}
 
   return (
-    // <div className='practise'>{/*Remember to change class*/}
-    //   {/*<Navbar />
-    //   <Meme />*/}
-    //   {/* <h1 className="state--title">Do I feel like going out tonight?</h1>
-    //   <diV className="state--value" onClick={handleFlip}>
-    //       <h1>{answer}</h1>
-    //   </diV> */}
-    //   <button onClick={addItem}>Add Item</button>
-    //   {allThingsArray}
+    <div>
+      <Navbar />
+      <Meme />
+      {/* <h1 className="state--title">Do I feel like going out tonight?</h1>
+      <diV className="state--value" onClick={handleFlip}>
+          <h1>{answer}</h1>
+      </diV>
+      <button onClick={addItem}>Add Item</button>
+      {allThingsArray} */}
 
-      
-    // </div>
-    <main>
-      <article className='card'>
-        <img src={userpix} className='card--image'/>
-        <div className='card--info'>
-            <FontAwesomeIcon onClick={toggleFavorite} icon={faStar} style={{color:starIcon}} className='card-favorite'/>
-            <h2 className='card--name'>
-              {contact.firstName} {contact.lastName}
-            </h2>
-            <p className='card--contact'>{contact.phone}</p>
-            <p className='card--contact'>{contact.email}</p>
+    </div>
 
-        </div>
 
-      </article>
-    </main>
+    // <main>
+    //   <article className='card'>
+    //     <img src={userpix} className='card--image'/>
+    //     <div className='card--info'>
+    //         <FontAwesomeIcon onClick={toggleFavorite} icon={faStar} style={{color:starIcon}} className='card-favorite'/>
+    //         <h2 className='card--name'>
+    //           {contact.firstName} {contact.lastName}
+    //         </h2>
+    //         <p className='card--contact'>{contact.phone}</p>
+    //         <p className='card--contact'>{contact.email}</p>
+
+    //     </div>
+
+    //   </article>
+    // </main>
   );
 }
 
