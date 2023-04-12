@@ -7,8 +7,12 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faStar} from '@fortawesome/fontawesome-free-solid';
 import Count from './Count'
 import Star from './Star'
+import Header from './Header'
+import Body from './Body'
+import boxes from './boxes';
+import { toBePartiallyChecked } from '@testing-library/jest-dom/dist/matchers';
 
-function App() {
+function App(props) {
   
 //  const [isGoingOut, setIsGoingOut] = React.useState(true);
 
@@ -24,19 +28,19 @@ function App() {
   // }
   // const allThingsArray = thingsArray.map((things) => <p>{things}</p>)
   
-  const [contact, setContact] = React.useState({
-        firstName: 'john',
-        lastName: "Doe",
-        phone: '+1 (719) 555-1212',
-        email: 'itsmyrealname@example.com',
-        isFavorite: true
-  })
+  // const [contact, setContact] = React.useState({
+  //       firstName: 'john',
+  //       lastName: "Doe",
+  //       phone: '+1 (719) 555-1212',
+  //       email: 'itsmyrealname@example.com',
+  //       isFavorite: true
+  // })
   
 
-  function toggleFavorite(){
-    setContact(preState =>
-      ({...preState, isFavorite: !preState.isFavorite})
-      )}
+  // function toggleFavorite(){
+  //   setContact(preState =>
+  //     ({...preState, isFavorite: !preState.isFavorite})
+  //     )}
 
 
       // const [count, setCount] = React.useState(0)
@@ -48,6 +52,20 @@ function App() {
       // function substract (){
       //   setCount((preState) => preState - 1)
       // }
+
+      const [user, setUser] = React.useState('Joe')
+
+      const [box, setBox] = React.useState(boxes)
+
+      const styles = {
+        backgroundColor : props.darkMode ? '#222222' : '#cccccc'
+      }
+
+      const allboxes = box.map((boxx) => 
+            <div style = {styles} className='box' key={boxx.id}></div>
+            )
+
+     
 
   return (
     // <div className='counter'>
@@ -67,21 +85,28 @@ function App() {
     // </div>
 
 
-    <main>
-      <article className='card'>
-        <img src={userpix} className='card--image'/>
-        <div className='card--info'>
-          <Star isFilled = {contact.isFavorite} handleClick={toggleFavorite}/>
-            <h2 className='card--name'>
-              {contact.firstName} {contact.lastName}
-            </h2>
-            <p className='card--contact'>{contact.phone}</p>
-            <p className='card--contact'>{contact.email}</p>
+    // <main>
+    //   <article className='card'>
+    //     <img src={userpix} className='card--image'/>
+    //     <div className='card--info'>
+    //       <Star isFilled = {contact.isFavorite} handleClick={toggleFavorite}/>
+    //         <h2 className='card--name'>
+    //           {contact.firstName} {contact.lastName}
+    //         </h2>
+    //         <p className='card--contact'>{contact.phone}</p>
+    //         <p className='card--contact'>{contact.email}</p>
 
+    //     </div>
+
+    //   </article>
+    // </main>
+      <main>
+        <div className='main'>
+          {/* <Header userName = {user}/> 
+          <Body userName = {user}/> */}
+          {allboxes}
         </div>
-
-      </article>
-    </main>
+      </main>
   );
 }
 
