@@ -11,6 +11,9 @@ import Header from './Header'
 import Body from './Body'
 import boxes from './boxes';
 import { toBePartiallyChecked } from '@testing-library/jest-dom/dist/matchers';
+import Box from './Box'
+import jokes from './jokesData'
+import Joke from "./Joke"
 
 function App(props) {
   
@@ -62,10 +65,25 @@ function App(props) {
       }
 
       const allboxes = box.map((boxx) => 
-            <div style = {styles} className='box' key={boxx.id}></div>
+            <Box on={boxx.on} 
+                 key={boxx.id} 
+                 id ={boxx.id}
+                 handleClicks={toggle}
+            />
             )
 
-     
+     function toggle (id){
+      setBox((preState) =>
+      preState.map(square => 
+        square.id === id ? {...square, on : !square.on}: square))
+     }
+
+     const jokeElement = jokes.map(joke =>
+              <Joke 
+              setup = {joke.setup}
+              punchline = {joke.punchline}        
+              />
+      )
 
   return (
     // <div className='counter'>
@@ -101,10 +119,11 @@ function App(props) {
     //   </article>
     // </main>
       <main>
-        <div className='main'>
+        <div>
           {/* <Header userName = {user}/> 
           <Body userName = {user}/> */}
-          {allboxes}
+          {/* {allboxes} */}
+          {jokeElement}
         </div>
       </main>
   );
