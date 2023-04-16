@@ -123,7 +123,7 @@ function App(props) {
           {/* <Header userName = {user}/> 
           <Body userName = {user}/> */}
           {/* {allboxes} */}
-          {jokeElement}
+          {/* {jokeElement} */}
         </div>
       </main>
   );
