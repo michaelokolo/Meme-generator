@@ -85,6 +85,8 @@ function App(props) {
               />
       )
 
+      const [messages, setMessages] = React.useState(['a','b'])
+
   return (
     // <div className='counter'>
       // {/* <Navbar />
@@ -123,7 +125,11 @@ function App(props) {
           {/* <Header userName = {user}/> 
           <Body userName = {user}/> */}
           {/* {allboxes} */}
+
+          {jokeElement}
+          {/* {messages.length !== 0 && <h1>You have {messages.length} unread messages!</h1>} */}
           {/* {jokeElement} */}
+ main
         </div>
       </main>
   );
