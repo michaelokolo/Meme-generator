@@ -285,3 +285,25 @@ main{
   margin-top: 0.5rem;
   border-radius: 4px;
 }
+
+form{
+  padding: 20px;
+}
+
+input{
+  margin-top:1rem;
+  padding:10px;
+  
+}
+
+textarea{
+  margin-top:1rem;
+  padding:10px;
+}
+
+.isFriendly{
+  display:inline;
+}
+label{
+  display: inline;
+}
