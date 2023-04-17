@@ -14,6 +14,7 @@ import { toBePartiallyChecked } from '@testing-library/jest-dom/dist/matchers';
 import Box from './Box'
 import jokes from './jokesData'
 import Joke from "./Joke"
+import Form from './Form'
 
 function App(props) {
   
@@ -126,10 +127,17 @@ function App(props) {
           <Body userName = {user}/> */}
           {/* {allboxes} */}
 
+          {/* {jokeElement} */}
+          {/* {messages.length === 0 ? 
+          <h1>You're all caught up!</h1> : 
+          <h1>You have {messages.length} unread {messages.length === 1 ? 'message' : 'messages'}!</h1>} */}
+          <Form/>
+
           {jokeElement}
           {/* {messages.length !== 0 && <h1>You have {messages.length} unread messages!</h1>} */}
           {/* {jokeElement} */}
  main
+main
         </div>
       </main>
   );
