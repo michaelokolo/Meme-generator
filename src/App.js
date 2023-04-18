@@ -57,36 +57,60 @@ function App(props) {
       //   setCount((preState) => preState - 1)
       // }
 
-      const [user, setUser] = React.useState('Joe')
+    //   const [user, setUser] = React.useState('Joe')
 
-      const [box, setBox] = React.useState(boxes)
+    //   const [box, setBox] = React.useState(boxes)
 
-      const styles = {
-        backgroundColor : props.darkMode ? '#222222' : '#cccccc'
+    //   const styles = {
+    //     backgroundColor : props.darkMode ? '#222222' : '#cccccc'
+    //   }
+
+    //   const allboxes = box.map((boxx) => 
+    //         <Box on={boxx.on} 
+    //              key={boxx.id} 
+    //              id ={boxx.id}
+    //              handleClicks={toggle}
+    //         />
+    //         )
+
+    //  function toggle (id){
+    //   setBox((preState) =>
+    //   preState.map(square => 
+    //     square.id === id ? {...square, on : !square.on}: square))
+    //  }
+
+    //  const jokeElement = jokes.map(joke =>
+    //           <Joke 
+    //           setup = {joke.setup}
+    //           punchline = {joke.punchline}        
+    //           />
+    //   )
+
+    //   const [messages, setMessages] = React.useState(['a','b'])
+
+      const [formData, setFormData] = React.useState({
+                email:"",
+                password:"",
+                confirmPassword:"",
+                joinNewsletter:true
+              })
+
+      function handleChange(event){
+        const {name, value, type, checked} = event.target
+        setFormData(preFormData => {
+          return {
+            ...preFormData,
+            [name]:type === "checkbox" ? checked : value
+          }
+        })
       }
 
-      const allboxes = box.map((boxx) => 
-            <Box on={boxx.on} 
-                 key={boxx.id} 
-                 id ={boxx.id}
-                 handleClicks={toggle}
-            />
-            )
+      function handleSubmit(event){
+        event.preventDefault()
+        console.log(formData.password === formData.confirmPassword ? "Successfully signed up" : "passwords do not match")
+        console.log(formData.joinNewsletter ? "Thanks for signing" : "")
+      }
 
-     function toggle (id){
-      setBox((preState) =>
-      preState.map(square => 
-        square.id === id ? {...square, on : !square.on}: square))
-     }
-
-     const jokeElement = jokes.map(joke =>
-              <Joke 
-              setup = {joke.setup}
-              punchline = {joke.punchline}        
-              />
-      )
-
-      const [messages, setMessages] = React.useState(['a','b'])
 
   return (
     // <div className='counter'>
@@ -130,7 +154,43 @@ function App(props) {
           {/* {messages.length === 0 ? 
           <h1>You're all caught up!</h1> : 
           <h1>You have {messages.length} unread {messages.length === 1 ? 'message' : 'messages'}!</h1>} */}
-          <Form/>
+          {/* <Form/> */}
+          <form onSubmit={handleSubmit}>
+              <input
+                type="email"
+                placeholder='email address'
+                name="email"
+                onChange={handleChange}
+                value={formData.email}
+              />
+              <br/>
+              <input
+                type="password"
+                placeholder='Password'
+                name="password"
+                onChange={handleChange}
+                value={formData.password}
+              />
+              <br/>
+              <input
+                type="password"
+                placeholder='Confirm password'
+                name="confirmPassword"
+                onChange={handleChange}
+                value={formData.confirmPassword}
+              />
+              <br/>
+              <input
+                type='checkbox'
+                name="joinNewsletter"
+                onChange={handleChange}
+                checked={formData.joinNewsletter}
+              />
+              <label>I want to join the newsletter</label>
+              <br/>
+              <br/>
+              <button>Sign up</button>
+          </form>
         </div>
       </main>
   );
