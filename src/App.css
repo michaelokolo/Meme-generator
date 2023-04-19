@@ -74,7 +74,7 @@ color: #FFFFFF;
   gap:17px
 }
 
-/* .box{
+.box{
   width: 230px;
   height: 35px;
   margin-bottom:15px;
@@ -85,9 +85,9 @@ color: #FFFFFF;
   font-size: 12px;
   line-height: 14px;
   color: #0D0D0D;
-} */
+}
 
-/* button{
+button{
   height: 40px;
   background: linear-gradient(90.41deg, #711F8D 1.14%, #A818DA 100%);
   border:none;
@@ -97,9 +97,42 @@ color: #FFFFFF;
   line-height: 19px;
   color: #FFFFFF;
   cursor:pointer;
-} */
+}
+
+.meme--image{
+  width: 30rem;
+  height: 20rem;
+  margin-top:36px;
+  border-radius: 2px;
+}
 
 
+.meme-text-img{
+  position:relative;
+  text-align:center;
+}
+
+.meme-text-img .top{
+  position: absolute;
+  top:30px;
+  color:#fff;
+  text-transform: uppercase;
+  font-size:60px;
+  font-weight: 900;
+  letter-spacing: -8px;
+  line-height: 45px;
+}
+
+.meme-text-img .bottom{
+  position: absolute;
+  top:160px;
+  color:#fff;
+  text-transform: uppercase;
+  font-size:60px;
+  font-weight: 900;
+  letter-spacing: -8px;
+  line-height: 45px;
+}
 /* .small-img{
   width: 40rem;
   border-radius: 5px;
@@ -122,12 +155,7 @@ color: #FFFFFF;
   transition: all 1s ease-in-out;
 } */
 
-.meme--image{
-  width: 30rem;
-  height: 20rem;
-  margin-top:36px;
-  border-radius: 2px;
-}
+
 
 
 /*style for practize*/
@@ -231,13 +259,13 @@ button:hover{
 }*/
 
 
-main{
+/* main{
   margin-top: 5rem auto 0;
-}
+} */
 
 
 
-.card{
+/* .card{
   border: 2px solid rgb(235, 232, 232);
   display: flex;
   justify-content: center;
@@ -266,37 +294,37 @@ main{
   margin:5px 0 0 0; 
   padding:0;
   font-size: 12px;
-}
-main{
+} */
+/* main{
   display: flex;
   align-items: center;
   justify-content: center;
   height: 100vh;
-}
-.main{
+} */
+/* .main{
   display: grid;
   grid-template-columns: 5rem 5rem 5rem;
   gap:2rem;
-}
-.box{
+} */
+/* .box{
   width:5rem;
   height: 5rem;
   border:0.1rem solid black;
   margin-top: 0.5rem;
   border-radius: 4px;
-}
+} */
 
-form{
+/* form{
   padding: 20px;
-}
+} */
 
-input{
+/* input{
   margin-top:1rem;
   padding:10px;
   
-}
+} */
 
-textarea{
+/* textarea{
   margin-top:1rem;
   padding:10px;
 }
@@ -306,4 +334,4 @@ textarea{
 }
 label{
   display: inline;
-}
+} */
