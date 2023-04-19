@@ -111,11 +111,17 @@ function App(props) {
         console.log(formData.joinNewsletter ? "Thanks for signing up for our newsletter" : "")
       }
 
+      const [starWarsData, setStarWarsData] = React.useState({})
 
+      React.useEffect(function(){
+        fetch('https://swapi.dev/api/people/1')
+            .then(res => res.json())
+            .then(data => setStarWarsData(data))
+      }, )
   return (
     <div>
-      <Navbar />
-      <Meme />
+      {/* <Navbar />
+      <Meme /> */}
       {/* // <h1 className="state--title">Do I feel like going out tonight?</h1>
       // <diV className="state--value" onClick={handleFlip}>
       //     <h1>{answer}</h1>
@@ -127,6 +133,9 @@ function App(props) {
       //   number = {count}
       // />
       // <button className='counter--plus' onClick={add}>+</button> */}
+        <div>
+            <pre>{JSON.stringify(starWarsData, null, 2)}</pre>
+        </div>
     </div>
 
 
