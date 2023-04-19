@@ -1,7 +1,7 @@
 import React from 'react';
 import './App.css';
-// import Navbar from './Navbar'
-// import Meme from './Meme'
+import Navbar from './Navbar'
+import Meme from './Meme'
 import userpix from './images/user.png'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faStar} from '@fortawesome/fontawesome-free-solid';
@@ -108,26 +108,27 @@ function App(props) {
       function handleSubmit(event){
         event.preventDefault()
         console.log(formData.password === formData.confirmPassword ? "Successfully signed up" : "passwords do not match")
-        console.log(formData.joinNewsletter ? "Thanks for signing" : "")
+        console.log(formData.joinNewsletter ? "Thanks for signing up for our newsletter" : "")
       }
 
 
   return (
-    // <div className='counter'>
-      // {/* <Navbar />
-      // <Meme /> */}
-      // {/* <h1 className="state--title">Do I feel like going out tonight?</h1>
+    <div>
+      <Navbar />
+      <Meme />
+      {/* // <h1 className="state--title">Do I feel like going out tonight?</h1>
       // <diV className="state--value" onClick={handleFlip}>
       //     <h1>{answer}</h1>
       // </diV>
       // <button onClick={addItem}>Add Item</button> */}
-      // {/* {allThingsArray}  */}
-      // {/* <button className='counter--minus' onClick={substract}>-</button>
+      {/* {allThingsArray}  */}
+      {/* <button className='counter--minus' onClick={substract}>-</button>
       // <Count
       //   number = {count}
       // />
       // <button className='counter--plus' onClick={add}>+</button> */}
-    // </div>
+    </div>
+
 
 
     // <main>
@@ -145,6 +146,59 @@ function App(props) {
 
     //   </article>
     // </main>
+
+      // //<main>
+      //   //<div>
+      //     {/* <Meme/> */}
+      //     {/* <Header userName = {user}/> 
+      //     <Body userName = {user}/> */}
+      //     {/* {allboxes} */}
+      //     {/* {jokeElement} */}
+      //     {/* {messages.length === 0 ? 
+      //     <h1>You're all caught up!</h1> : 
+      //     <h1>You have {messages.length} unread {messages.length === 1 ? 'message' : 'messages'}!</h1>} */}
+      //     {/* <Form/> */}
+      //     {/* <form onSubmit={handleSubmit}>
+      //         <input
+      //           type="email"
+      //           placeholder='email address'
+      //           name="email"
+      //           onChange={handleChange}
+      //           value={formData.email}
+      //         />
+      //         <br/>
+      //         <input
+      //           type="password"
+      //           placeholder='Password'
+      //           name="password"
+      //           onChange={handleChange}
+      //           value={formData.password}
+      //         />
+      //         <br/>
+      //         <input
+      //           type="password"
+      //           placeholder='Confirm password'
+      //           name="confirmPassword"
+      //           onChange={handleChange}
+      //           value={formData.confirmPassword}
+      //         />
+      //         <br/>
+      //         <input
+      //           id="joinNewsletter"
+      //           type='checkbox'
+      //           name="joinNewsletter"
+      //           onChange={handleChange}
+      //           checked={formData.joinNewsletter}
+      //         />
+      //         <label htmlFor='joinNewsletter'>I want to join the newsletter</label>
+      //         <br/>
+      //         <br/>
+      //         <button>Sign up</button>
+      //     </form>  */}
+
+      //</div>
+      //</main>
+      
       <main>
         <div>
           {/* <Header userName = {user}/> 
@@ -198,9 +252,6 @@ function App(props) {
           {jokeElement}
           {/* {messages.length !== 0 && <h1>You have {messages.length} unread messages!</h1>} */}
           {/* {jokeElement} */}
- main
-main
-main
         </div>
       </main>
   );
