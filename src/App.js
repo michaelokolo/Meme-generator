@@ -150,10 +150,12 @@ function App(props) {
           {/* <Header userName = {user}/> 
           <Body userName = {user}/> */}
           {/* {allboxes} */}
+
           {/* {jokeElement} */}
           {/* {messages.length === 0 ? 
           <h1>You're all caught up!</h1> : 
           <h1>You have {messages.length} unread {messages.length === 1 ? 'message' : 'messages'}!</h1>} */}
+
           {/* <Form/> */}
           <form onSubmit={handleSubmit}>
               <input
@@ -191,6 +193,14 @@ function App(props) {
               <br/>
               <button>Sign up</button>
           </form>
+          <Form/>
+
+          {jokeElement}
+          {/* {messages.length !== 0 && <h1>You have {messages.length} unread messages!</h1>} */}
+          {/* {jokeElement} */}
+ main
+main
+main
         </div>
       </main>
   );
