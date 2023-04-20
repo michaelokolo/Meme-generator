@@ -155,6 +155,7 @@ function App(props) {
 
     //   </article>
     // </main>
+
       // //<main>
       //   //<div>
       //     {/* <Meme/> */}
@@ -206,6 +207,62 @@ function App(props) {
 
       //</div>
       //</main>
+      
+      <main>
+        <div>
+          {/* <Header userName = {user}/> 
+          <Body userName = {user}/> */}
+          {/* {allboxes} */}
+
+          {/* {jokeElement} */}
+          {/* {messages.length === 0 ? 
+          <h1>You're all caught up!</h1> : 
+          <h1>You have {messages.length} unread {messages.length === 1 ? 'message' : 'messages'}!</h1>} */}
+
+          {/* <Form/> */}
+          <form onSubmit={handleSubmit}>
+              <input
+                type="email"
+                placeholder='email address'
+                name="email"
+                onChange={handleChange}
+                value={formData.email}
+              />
+              <br/>
+              <input
+                type="password"
+                placeholder='Password'
+                name="password"
+                onChange={handleChange}
+                value={formData.password}
+              />
+              <br/>
+              <input
+                type="password"
+                placeholder='Confirm password'
+                name="confirmPassword"
+                onChange={handleChange}
+                value={formData.confirmPassword}
+              />
+              <br/>
+              <input
+                type='checkbox'
+                name="joinNewsletter"
+                onChange={handleChange}
+                checked={formData.joinNewsletter}
+              />
+              <label>I want to join the newsletter</label>
+              <br/>
+              <br/>
+              <button>Sign up</button>
+          </form>
+          <Form/>
+
+          {jokeElement}
+          {/* {messages.length !== 0 && <h1>You have {messages.length} unread messages!</h1>} */}
+          {/* {jokeElement} */}
+        </div>
+      </main>
   );
 }
 
