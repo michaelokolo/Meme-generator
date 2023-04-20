@@ -15,6 +15,7 @@ import Box from './Box';
 import jokes from './jokesData';
 import Joke from './Joke';
 import Form from './Form';
+import WindowTracker from "./WindowTracker"
 
 function App(props) {
   //  const [isGoingOut, setIsGoingOut] = React.useState(true);
@@ -114,6 +115,12 @@ function App(props) {
     );
   }
 
+  const [show, setShow] = React.useState(true);
+  console.log(show)
+  function toggle(){
+    setShow(preShow => !preShow)
+  }
+
   // const [starWarsData, setStarWarsData] = React.useState({});
   // const [count, setCount] = React.useState(1);
   
@@ -129,8 +136,10 @@ function App(props) {
   // }
   return (
     <div>
-      <Navbar />
-      <Meme /> 
+      {/* <Navbar />
+      <Meme />  */}
+      <button onClick={toggle}>Toggle Window Tracker</button>
+      {show && <WindowTracker/>}
       {/* // <h1 className="state--title">Do I feel like going out tonight?</h1>
       // <diV className="state--value" onClick={handleFlip}>
       //     <h1>{answer}</h1>
