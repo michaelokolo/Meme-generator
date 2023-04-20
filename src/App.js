@@ -1,29 +1,28 @@
 import React from 'react';
 import './App.css';
-import Navbar from './Navbar'
-import Meme from './Meme'
-import userpix from './images/user.png'
+import Navbar from './Navbar';
+import Meme from './Meme';
+import userpix from './images/user.png';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faStar} from '@fortawesome/fontawesome-free-solid';
-import Count from './Count'
-import Star from './Star'
-import Header from './Header'
-import Body from './Body'
+import { faStar } from '@fortawesome/fontawesome-free-solid';
+import Count from './Count';
+import Star from './Star';
+import Header from './Header';
+import Body from './Body';
 import boxes from './boxes';
 import { toBePartiallyChecked } from '@testing-library/jest-dom/dist/matchers';
-import Box from './Box'
-import jokes from './jokesData'
-import Joke from "./Joke"
-import Form from './Form'
+import Box from './Box';
+import jokes from './jokesData';
+import Joke from './Joke';
+import Form from './Form';
 
 function App(props) {
-  
-//  const [isGoingOut, setIsGoingOut] = React.useState(true);
+  //  const [isGoingOut, setIsGoingOut] = React.useState(true);
 
-//  function handleFlip(){
-//   setIsGoingOut(preState => !preState)
-//  }
-//  let answer = isGoingOut ? "Yes" : "No"
+  //  function handleFlip(){
+  //   setIsGoingOut(preState => !preState)
+  //  }
+  //  let answer = isGoingOut ? "Yes" : "No"
 
   // const [thingsArray, setThingsArray] = React.useState(['Thing 1', 'Thing 2'])
 
@@ -31,7 +30,7 @@ function App(props) {
   //   setThingsArray(preState => [...preState, `Thing ${preState.length + 1}`])
   // }
   // const allThingsArray = thingsArray.map((things) => <p>{things}</p>)
-  
+
   // const [contact, setContact] = React.useState({
   //       firstName: 'john',
   //       lastName: "Doe",
@@ -39,85 +38,95 @@ function App(props) {
   //       email: 'itsmyrealname@example.com',
   //       isFavorite: true
   // })
-  
 
   // function toggleFavorite(){
   //   setContact(preState =>
   //     ({...preState, isFavorite: !preState.isFavorite})
   //     )}
 
+  // const [count, setCount] = React.useState(0)
 
-      // const [count, setCount] = React.useState(0)
+  // function add (){
+  //   setCount((preState) => preState + 1)
+  // }
 
-      // function add (){
-      //   setCount((preState) => preState + 1)
-      // }
+  // function substract (){
+  //   setCount((preState) => preState - 1)
+  // }
 
-      // function substract (){
-      //   setCount((preState) => preState - 1)
-      // }
+  //   const [user, setUser] = React.useState('Joe')
 
-    //   const [user, setUser] = React.useState('Joe')
+  //   const [box, setBox] = React.useState(boxes)
 
-    //   const [box, setBox] = React.useState(boxes)
+  //   const styles = {
+  //     backgroundColor : props.darkMode ? '#222222' : '#cccccc'
+  //   }
 
-    //   const styles = {
-    //     backgroundColor : props.darkMode ? '#222222' : '#cccccc'
-    //   }
+  //   const allboxes = box.map((boxx) =>
+  //         <Box on={boxx.on}
+  //              key={boxx.id}
+  //              id ={boxx.id}
+  //              handleClicks={toggle}
+  //         />
+  //         )
 
-    //   const allboxes = box.map((boxx) => 
-    //         <Box on={boxx.on} 
-    //              key={boxx.id} 
-    //              id ={boxx.id}
-    //              handleClicks={toggle}
-    //         />
-    //         )
+  //  function toggle (id){
+  //   setBox((preState) =>
+  //   preState.map(square =>
+  //     square.id === id ? {...square, on : !square.on}: square))
+  //  }
 
-    //  function toggle (id){
-    //   setBox((preState) =>
-    //   preState.map(square => 
-    //     square.id === id ? {...square, on : !square.on}: square))
-    //  }
+  //  const jokeElement = jokes.map(joke =>
+  //           <Joke
+  //           setup = {joke.setup}
+  //           punchline = {joke.punchline}
+  //           />
+  //   )
 
-    //  const jokeElement = jokes.map(joke =>
-    //           <Joke 
-    //           setup = {joke.setup}
-    //           punchline = {joke.punchline}        
-    //           />
-    //   )
+  //   const [messages, setMessages] = React.useState(['a','b'])
 
-    //   const [messages, setMessages] = React.useState(['a','b'])
+  const [formData, setFormData] = React.useState({
+    email: '',
+    password: '',
+    confirmPassword: '',
+    joinNewsletter: true,
+  });
 
-      const [formData, setFormData] = React.useState({
-                email:"",
-                password:"",
-                confirmPassword:"",
-                joinNewsletter:true
-              })
+  function handleChange(event) {
+    const { name, value, type, checked } = event.target;
+    setFormData((preFormData) => {
+      return {
+        ...preFormData,
+        [name]: type === 'checkbox' ? checked : value,
+      };
+    });
+  }
 
-      function handleChange(event){
-        const {name, value, type, checked} = event.target
-        setFormData(preFormData => {
-          return {
-            ...preFormData,
-            [name]:type === "checkbox" ? checked : value
-          }
-        })
-      }
+  function handleSubmit(event) {
+    event.preventDefault();
+    console.log(
+      formData.password === formData.confirmPassword
+        ? 'Successfully signed up'
+        : 'passwords do not match'
+    );
+    console.log(
+      formData.joinNewsletter ? 'Thanks for signing up for our newsletter' : ''
+    );
+  }
 
-      function handleSubmit(event){
-        event.preventDefault()
-        console.log(formData.password === formData.confirmPassword ? "Successfully signed up" : "passwords do not match")
-        console.log(formData.joinNewsletter ? "Thanks for signing up for our newsletter" : "")
-      }
+  const [starWarsData, setStarWarsData] = React.useState({});
+  const [count, setCount] = React.useState(1);
+  
+  React.useEffect(() => {
+    console.log('effect function ran');
+    fetch(`https://swapi.dev/api/people/${count}`)
+      .then(res => res.json())
+      .then(data => setStarWarsData(data));
+  }, [count]);
 
-      const [starWarsData, setStarWarsData] = React.useState({})
-
-      React.useEffect(function(){
-        fetch('https://swapi.dev/api/people/1')
-            .then(res => res.json())
-            .then(data => setStarWarsData(data))
-      }, )
+  function add() {
+    setCount((preCount) => preCount + 1);
+  }
   return (
     <div>
       {/* <Navbar />
@@ -133,12 +142,12 @@ function App(props) {
       //   number = {count}
       // />
       // <button className='counter--plus' onClick={add}>+</button> */}
-        <div>
-            <pre>{JSON.stringify(starWarsData, null, 2)}</pre>
-        </div>
+      <div>
+        <pre>{JSON.stringify(starWarsData, null, 2)}</pre>
+        <p>The count is {count}</p>
+        <button onClick={add}>Get Next Character</button>
+      </div>
     </div>
-
-
 
     // <main>
     //   <article className='card'>
@@ -156,113 +165,113 @@ function App(props) {
     //   </article>
     // </main>
 
-      // //<main>
-      //   //<div>
-      //     {/* <Meme/> */}
-      //     {/* <Header userName = {user}/> 
-      //     <Body userName = {user}/> */}
-      //     {/* {allboxes} */}
-      //     {/* {jokeElement} */}
-      //     {/* {messages.length === 0 ? 
-      //     <h1>You're all caught up!</h1> : 
-      //     <h1>You have {messages.length} unread {messages.length === 1 ? 'message' : 'messages'}!</h1>} */}
-      //     {/* <Form/> */}
-      //     {/* <form onSubmit={handleSubmit}>
-      //         <input
-      //           type="email"
-      //           placeholder='email address'
-      //           name="email"
-      //           onChange={handleChange}
-      //           value={formData.email}
-      //         />
-      //         <br/>
-      //         <input
-      //           type="password"
-      //           placeholder='Password'
-      //           name="password"
-      //           onChange={handleChange}
-      //           value={formData.password}
-      //         />
-      //         <br/>
-      //         <input
-      //           type="password"
-      //           placeholder='Confirm password'
-      //           name="confirmPassword"
-      //           onChange={handleChange}
-      //           value={formData.confirmPassword}
-      //         />
-      //         <br/>
-      //         <input
-      //           id="joinNewsletter"
-      //           type='checkbox'
-      //           name="joinNewsletter"
-      //           onChange={handleChange}
-      //           checked={formData.joinNewsletter}
-      //         />
-      //         <label htmlFor='joinNewsletter'>I want to join the newsletter</label>
-      //         <br/>
-      //         <br/>
-      //         <button>Sign up</button>
-      //     </form>  */}
+    // //<main>
+    //   //<div>
+    //     {/* <Meme/> */}
+    //     {/* <Header userName = {user}/>
+    //     <Body userName = {user}/> */}
+    //     {/* {allboxes} */}
+    //     {/* {jokeElement} */}
+    //     {/* {messages.length === 0 ?
+    //     <h1>You're all caught up!</h1> :
+    //     <h1>You have {messages.length} unread {messages.length === 1 ? 'message' : 'messages'}!</h1>} */}
+    //     {/* <Form/> */}
+    //     {/* <form onSubmit={handleSubmit}>
+    //         <input
+    //           type="email"
+    //           placeholder='email address'
+    //           name="email"
+    //           onChange={handleChange}
+    //           value={formData.email}
+    //         />
+    //         <br/>
+    //         <input
+    //           type="password"
+    //           placeholder='Password'
+    //           name="password"
+    //           onChange={handleChange}
+    //           value={formData.password}
+    //         />
+    //         <br/>
+    //         <input
+    //           type="password"
+    //           placeholder='Confirm password'
+    //           name="confirmPassword"
+    //           onChange={handleChange}
+    //           value={formData.confirmPassword}
+    //         />
+    //         <br/>
+    //         <input
+    //           id="joinNewsletter"
+    //           type='checkbox'
+    //           name="joinNewsletter"
+    //           onChange={handleChange}
+    //           checked={formData.joinNewsletter}
+    //         />
+    //         <label htmlFor='joinNewsletter'>I want to join the newsletter</label>
+    //         <br/>
+    //         <br/>
+    //         <button>Sign up</button>
+    //     </form>  */}
 
-      //</div>
-      //</main>
-      
-      <main>
-        <div>
-          {/* <Header userName = {user}/> 
-          <Body userName = {user}/> */}
-          {/* {allboxes} */}
+    //</div>
+    //</main>
 
-          {/* {jokeElement} */}
-          {/* {messages.length === 0 ? 
-          <h1>You're all caught up!</h1> : 
-          <h1>You have {messages.length} unread {messages.length === 1 ? 'message' : 'messages'}!</h1>} */}
+    // <main>
+    //   <div>
+    //     {/* <Header userName = {user}/>
+    //     <Body userName = {user}/> */}
+    //     {/* {allboxes} */}
 
-          {/* <Form/> */}
-          <form onSubmit={handleSubmit}>
-              <input
-                type="email"
-                placeholder='email address'
-                name="email"
-                onChange={handleChange}
-                value={formData.email}
-              />
-              <br/>
-              <input
-                type="password"
-                placeholder='Password'
-                name="password"
-                onChange={handleChange}
-                value={formData.password}
-              />
-              <br/>
-              <input
-                type="password"
-                placeholder='Confirm password'
-                name="confirmPassword"
-                onChange={handleChange}
-                value={formData.confirmPassword}
-              />
-              <br/>
-              <input
-                type='checkbox'
-                name="joinNewsletter"
-                onChange={handleChange}
-                checked={formData.joinNewsletter}
-              />
-              <label>I want to join the newsletter</label>
-              <br/>
-              <br/>
-              <button>Sign up</button>
-          </form>
-          <Form/>
+    //     {/* {jokeElement} */}
+    //     {/* {messages.length === 0 ?
+    //     <h1>You're all caught up!</h1> :
+    //     <h1>You have {messages.length} unread {messages.length === 1 ? 'message' : 'messages'}!</h1>} */}
 
-          {jokeElement}
-          {/* {messages.length !== 0 && <h1>You have {messages.length} unread messages!</h1>} */}
-          {/* {jokeElement} */}
-        </div>
-      </main>
+    //     {/* <Form/> */}
+    //     <form onSubmit={handleSubmit}>
+    //         <input
+    //           type="email"
+    //           placeholder='email address'
+    //           name="email"
+    //           onChange={handleChange}
+    //           value={formData.email}
+    //         />
+    //         <br/>
+    //         <input
+    //           type="password"
+    //           placeholder='Password'
+    //           name="password"
+    //           onChange={handleChange}
+    //           value={formData.password}
+    //         />
+    //         <br/>
+    //         <input
+    //           type="password"
+    //           placeholder='Confirm password'
+    //           name="confirmPassword"
+    //           onChange={handleChange}
+    //           value={formData.confirmPassword}
+    //         />
+    //         <br/>
+    //         <input
+    //           type='checkbox'
+    //           name="joinNewsletter"
+    //           onChange={handleChange}
+    //           checked={formData.joinNewsletter}
+    //         />
+    //         <label>I want to join the newsletter</label>
+    //         <br/>
+    //         <br/>
+    //         <button>Sign up</button>
+    //     </form>
+    //     <Form/>
+
+    //     {jokeElement}
+    //     {/* {messages.length !== 0 && <h1>You have {messages.length} unread messages!</h1>} */}
+    //     {/* {jokeElement} */}
+    //   </div>
+    // </main>
   );
 }
 
