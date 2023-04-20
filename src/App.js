@@ -114,23 +114,23 @@ function App(props) {
     );
   }
 
-  const [starWarsData, setStarWarsData] = React.useState({});
-  const [count, setCount] = React.useState(1);
+  // const [starWarsData, setStarWarsData] = React.useState({});
+  // const [count, setCount] = React.useState(1);
   
-  React.useEffect(() => {
-    console.log('effect function ran');
-    fetch(`https://swapi.dev/api/people/${count}`)
-      .then(res => res.json())
-      .then(data => setStarWarsData(data));
-  }, [count]);
+  // React.useEffect(() => {
+  
+  //   fetch(`https://swapi.dev/api/people/${count}`)
+  //     .then(res => res.json())
+  //     .then(data => setStarWarsData(data));
+  // }, [count]);
 
-  function add() {
-    setCount((preCount) => preCount + 1);
-  }
+  // function add() {
+  //   setCount((preCount) => preCount + 1);
+  // }
   return (
     <div>
-      {/* <Navbar />
-      <Meme /> */}
+      <Navbar />
+      <Meme /> 
       {/* // <h1 className="state--title">Do I feel like going out tonight?</h1>
       // <diV className="state--value" onClick={handleFlip}>
       //     <h1>{answer}</h1>
@@ -142,11 +142,11 @@ function App(props) {
       //   number = {count}
       // />
       // <button className='counter--plus' onClick={add}>+</button> */}
-      <div>
+      {/* <div>
         <pre>{JSON.stringify(starWarsData, null, 2)}</pre>
         <p>The count is {count}</p>
         <button onClick={add}>Get Next Character</button>
-      </div>
+      </div> */}
     </div>
 
     // <main>

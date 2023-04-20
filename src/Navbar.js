@@ -1,10 +1,11 @@
+import React from 'react'
 import picture from './images/troll-face.png'
 
 function Navbar(){
     return(
         <nav className="navbar">
             <div className='nav-logo'>
-                <img src={picture} alt="troll-face"/>
+                {/* <img src={picture} alt="troll-face"/> */}
                 <h3 className="nav-text">Meme Generator</h3>
             </div>
 
